@@ -24,7 +24,11 @@ driver.implicitly_wait(10)
 
 driver.get('https://twitter.com/kfc')
 
+bio = driver.driver.find_elements_by_xpath('//div[@data-testid="UserDescription"] > span').text
 twt_follwing = driver.find_element_by_css_selector('a[href="/kfc/following"] > span > span').text
 twt_follwers = driver.find_element_by_css_selector('a[href="/kfc/followers"] > span > span').text
-
+name = driver.find_elements_by_xpath('//div[@data-testid="UserName"] > div > div > div > div > div >  span > span').text
+location = driver.find_elements_by_xpath('//div[@data-testid="UserProfileHeader_Items"] > span > svg > span > span').text
+url = page_cards = driver.find_elements_by_xpath('//a[@data-testid="UserUrl"] > svg > span').text
+joined_date = driver.find_elements_by_xpath('//a[@data-testid="UserDate"] > svg > span').text
 print(twt_follwers,twt_follwing)
